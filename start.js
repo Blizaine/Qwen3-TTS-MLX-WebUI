@@ -7,6 +7,16 @@ module.exports = {
         venv: "env",
         path: "app",
         message: [
+          "uv pip install --quiet fastapi uvicorn python-multipart"
+        ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
+        venv: "env",
+        path: "app",
+        message: [
           "python -m uvicorn server:app --host 127.0.0.1 --port {{port}}"
         ],
         on: [{
